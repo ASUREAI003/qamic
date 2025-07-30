@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>夢想麵館用餐導引</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-image: url("backg.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #330000;
+      min-height: 100vh;
+      padding-top: 4vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container-box {
+      width: 100%;
+      max-width: 768px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .block-glow {
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow:
+        0 4px 12px rgba(100, 60, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    /* mic 區塊使用漸層圖 */
+    .block-glow.mic-section {
+      background-image: url("button-1.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      box-shadow: 0 6px 20px rgba(80, 20, 0, 0.4);
+    }
+
+    /* 回答區使用 ffd09c */
+    .block-glow:not(.mic-section) {
+      background-color: #ffd09c;
+    }
+
+    .mic-button {
+      background-color: #ffffff;
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 4px 12px rgba(80, 20, 0, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6);
+      transition: transform 0.2s;
+    }
+
+    .mic-button:hover {
+      transform: scale(1.05);
+    }
+
+    .clay-button {
+      background-color: #fcd95b;
+      color: #4b2e00;
+      font-weight: bold;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(80, 20, 0, 0.3);
+      transition: all 0.25s ease-in-out;
+      padding: 0.5rem 1.25rem;
+    }
+
+    .clay-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(80, 20, 0, 0.4);
+    }
+
+    .video-box {
+      background-color: #6a3d1b;
+      border-radius: 20px;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .label-tag {
+      background-color: #fcd95b;
+      color: #4b2e00;
+      font-weight: bold;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(120, 60, 0, 0.3);
+    }
+
+    .glow-text {
+      text-shadow: 0 0 8px #e0b383, 0 0 16px #c77c35;
+    }
+
+    .outside-button {
+      position: absolute;
+      right: -140px;
+      bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .outside-button {
+        position: relative;
+        right: 0;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    .block-glow .bg-white {
+      background-color: #7c0101 !important;
+      color: #fff8e1;
+    }
+
+    .block-glow .text-pink-200 {
+      color: #fcd95b !important;
+    }
+
+    .block-glow .shadow-inner {
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    }
+
+    .block-glow .p-4 {
+      background-image: url("button-1.png");
+      background-size: cover;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-box">
+    <header class="text-center">
+      <div class="flex items-center justify-center text-3xl font-bold glow-text">
+        <img src="noodle.png" alt="logo" class="h-10 mr-3"/>
+        <h1>夢想麵館用餐導引</h1>
+      </div>
+    </header>
+
+    <main class="space-y-10">
+      <!-- 語音按鈕 -->
+      <div class="block-glow mic-section text-center space-y-4">
+        <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+          <button class="mic-button">
+            <span class="material-icons text-4xl">mic</span>
+          </button>
+          <p class="text-xl font-semibold">請按下這個按鈕進行語音查詢</p>
+        </div>
+      </div>
+
+      <!-- 回答區 -->
+      <div class="block-glow space-y-4">
+        <!-- 使用者說的話 -->
+        <div class="bg-white bg-opacity-20 px-4 py-3 rounded-xl shadow-inner">
+          <p class="text-sm font-medium text-white">你剛剛說的話：</p>
+          <p class="text-lg font-bold text-pink-200">「我想要一碗牛肉麵」</p>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <span class="label-tag">導引回答</span>
+          <div class="flex-1 min-h-[60px] p-4 bg-white bg-opacity-20 rounded-xl shadow-inner">
+            <p>這裡是系統的回覆內容。</p>
+          </div>
+        </div>
+        <div class="video-box">
+          <p class="text-2xl font-bold opacity-90">影片</p>
+        </div>
+
+        <!-- 回首頁按鈕 -->
+        <div class="outside-button">
+          <button class="clay-button">回導引首頁</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
