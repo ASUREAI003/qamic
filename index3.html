@@ -40,7 +40,7 @@
       position: relative;
     }
 
-    /* mic 區塊使用漸層圖 */
+    /* 語音按鈕整塊底圖 */
     .block-glow.mic-section {
       background-image: url("button-1.png");
       background-size: cover;
@@ -50,9 +50,21 @@
       box-shadow: 0 6px 20px rgba(80, 20, 0, 0.4);
     }
 
-    /* 回答區使用 ffd09c */
+    /* 回答區整體底色 */
     .block-glow:not(.mic-section) {
       background-color: #ffd09c;
+    }
+
+    /* 使用者說的話那塊背景圖 */
+    .user-quote {
+      background-image: url("button-2.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
     }
 
     .mic-button {
@@ -128,15 +140,6 @@
       }
     }
 
-    .block-glow .bg-white {
-      background-color: #7c0101 !important;
-      color: #fff8e1;
-    }
-
-    .block-glow .text-pink-200 {
-      color: #fcd95b !important;
-    }
-
     .block-glow .shadow-inner {
       box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
     }
@@ -171,9 +174,9 @@
       <!-- 回答區 -->
       <div class="block-glow space-y-4">
         <!-- 使用者說的話 -->
-        <div class="bg-white bg-opacity-20 px-4 py-3 rounded-xl shadow-inner">
-          <p class="text-sm font-medium text-white">你剛剛說的話：</p>
-          <p class="text-lg font-bold text-pink-200">「我想要一碗牛肉麵」</p>
+        <div class="user-quote">
+          <p class="text-sm font-medium">你剛剛說的話：</p>
+          <p class="text-lg font-bold text-yellow-300">「我想要一碗牛肉麵」</p>
         </div>
 
         <div class="flex items-start space-x-4">
