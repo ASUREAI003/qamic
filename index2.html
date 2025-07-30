@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>夢想麵館用餐導引</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      background: url('backg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+    }
+
+    .container {
+      width: 768px;
+      background-color: transparent;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    header img {
+      width: 50px;
+      height: auto;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #1d0f08;
+    }
+
+    .block {
+      background: url('button-1.png') no-repeat center center;
+      background-size: 100% 100%;
+      padding: 1.5rem;
+      border-radius: 30px;
+      color: white;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    .mic-button {
+      background: white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border: 3px solid #444;
+      margin: 0 auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .mic-text {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .user-speech {
+      background: url('button-1.png') no-repeat center center;
+      background-size: 100% 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 20px;
+      color: #ffeb3b;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .user-speech-label {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .answer-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .answer-label {
+      background: #ffeb3b;
+      color: #000;
+      font-weight: bold;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .answer-box {
+      background: url('button-1.png') no-repeat center center;
+      background-size: 100% 100%;
+      border-radius: 20px;
+      padding: 0.8rem 1rem;
+      color: white;
+      flex: 1;
+    }
+
+    .video-box {
+      background: #6c3b15;
+      border-radius: 20px;
+      height: 220px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .home-button {
+      background: linear-gradient(to bottom, #ffde82, #c88b00);
+      color: black;
+      font-weight: bold;
+      padding: 0.4rem 1.2rem;
+      border-radius: 12px;
+      border: 2px solid #805200;
+      box-shadow: 0 4px 0 #734c00;
+      float: right;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .home-button {
+        float: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 標題 -->
+    <header>
+      <img src="noodle.png" alt="logo">
+      <h1>夢想麵館用餐導引</h1>
+    </header>
+
+    <!-- 語音查詢 -->
+    <div class="block">
+      <div class="mic-button">🎤</div>
+      <p class="mic-text">請按下這個按鈕進行語音查詢</p>
+    </div>
+
+    <!-- 回答區 -->
+    <div class="block">
+      <div class="user-speech-label">您剛剛說的話：</div>
+      <div class="user-speech">「我該如何點餐？」</div>
+
+      <div class="answer-group">
+        <div class="answer-label">導引回答</div>
+        <div class="answer-box">這裡是系統的回覆內容。</div>
+      </div>
+
+      <div class="video-box">影片</div>
+      <button class="home-button">回導引首頁</button>
+    </div>
+  </div>
+</body>
+</html>
